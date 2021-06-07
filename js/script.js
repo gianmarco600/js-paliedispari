@@ -10,7 +10,8 @@ function calcoli(){
     }
     else{
         input = input.trim();
-        input = input.toLocaleLowerCase()
+        input = input.toLocaleLowerCase();
+        input = input.replace(/ /g, "");
         var pos = input.search("locate");
         var pali = isPali(input);
         var risultato;
@@ -29,33 +30,17 @@ function isPali(input){
     var numChar = arrParola.length;
     var parolaMezzi =Math.ceil(numChar / 2);
     console.log(numChar);
-    var scartoDx = 0;
-    var scartoSx = 0;
     for (var i = 0; i <= parolaMezzi; i++){
 
-        iDec = (numChar - i) - scartoDx -1;
-        iCre = i + scartoSx;
-        
-
-        if(arrParola[i] == ' ' ){
-            scartoSx ++;
-        }
-        iCre = iCre + scartoSx;
-
-
-        if(arrParola[iDec] == ' ' ){
-            scartoDx ++;
-        }
-        iDec = iDec - scartoDx;
-        console.log(arrParola[iCre] + arrParola[iDec]);
-        
+        iDec = (numChar - i) -1;
+        iCre = i;
         if (arrParola[i] != arrParola[iDec]){
             
             return false;
         }
     }
-    scartoDx = 0;
-    scartoSx = 0;
+    
     return true;
     
+
 }
