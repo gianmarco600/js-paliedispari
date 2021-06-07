@@ -1,17 +1,20 @@
 
-document.getElementById('btn').addEventListener("click" , calcoli());
+document.getElementById('controlla').addEventListener('click' , calcoli);
 
 
 function calcoli(){
+    alert("inizio calc");
     var input ="";
     input = document.getElementById("input").value;
     var pali = isPali(input);
+    var risultato;
     if(pali){
-        document.getElementById("output").innerHTML = 'Palindromaaaa!';
+        risultato = 'Palindromaaaa!';
     }
     else{
-        document.getElementById("output").innerHTML = 'non palindroma';
+        risultato = 'Non palindroma';
     }
+    document.getElementById("output").innerHTML = risultato;
 }
 
 function isPali(input){
