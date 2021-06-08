@@ -57,7 +57,7 @@ function pariODispari(){
         console.log(num1 + numGiocatore);
         sum = num1 + numGiocatore;
         var vince;
-        if (sum % 2 == 0 ){
+        if (isPari(sum)){
             var vince = "pari";
         }
         else{
@@ -69,5 +69,11 @@ function pariODispari(){
         else{
             document.getElementById("vincitore").innerHTML = "ha vinto lui mi disp";
         }
+    }
+}
+
+function isPari(num){
+    if (num % 2 == 0){
+        return true;
     }
 }
