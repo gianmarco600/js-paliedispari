@@ -13,8 +13,7 @@ function calcoli(){
         input = input.trim();
         input = input.toLocaleLowerCase();
         input = input.replace(/ /g, "");
-        
-        var pos = input.search("locate");
+    
         var pali = isPali(input);
         var risultato;
         if(pali){
@@ -53,8 +52,6 @@ function pariODispari(){
         alert('inserire un numero da 1 a 5')
     }
     else{
-        console.log(num1 , numGiocatore);
-        console.log(num1 + numGiocatore);
         sum = num1 + numGiocatore;
         var vince;
         if (isPari(sum)){
