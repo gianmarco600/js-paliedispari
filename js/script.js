@@ -47,23 +47,27 @@ function isPali(input){
 
 function pariODispari(){
     var giocatore = document.getElementById('PoD').value;
+    var numGiocatore =  parseInt(document.getElementById('numGiocatore').value);
     var num1 = (Math.floor(Math.random()*4))+1;
-    var num2 = (Math.floor(Math.random()*4))+1;
-    console.log(num1 , num2);
-    console.log(num1 + num2);
-    sum = num1 + num2;
-    var vince;
-    if (sum % 2 == 0 ){
-        var vince = "pari";
+    if (numGiocatore < 1 || numGiocatore > 5){
+        alert('inserire un numero da 1 a 5')
     }
     else{
-        vince = "dispari"; 
+        console.log(num1 , numGiocatore);
+        console.log(num1 + numGiocatore);
+        sum = num1 + numGiocatore;
+        var vince;
+        if (sum % 2 == 0 ){
+            var vince = "pari";
+        }
+        else{
+            vince = "dispari"; 
+        }
+        if (giocatore == vince){
+            document.getElementById("vincitore").innerHTML = "hai vinto!";
+        }
+        else{
+            document.getElementById("vincitore").innerHTML = "ha vinto lui mi disp";
+        }
     }
-    if (giocatore == vince){
-        document.getElementById("vincitore").innerHTML = "hai vinto!";
-    }
-    else{
-        document.getElementById("vincitore").innerHTML = "ha vinto lui mi disp";
-    }
-
 }
